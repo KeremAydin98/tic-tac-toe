@@ -9,7 +9,7 @@ class TicTacToe
 
         TicTacToe();
         char selectgrid(int row, int column, char symbol);
-        int who_won();
+        std::pair<int, int> who_won();
         void printresult(std::string name1, std::string name2, int x_won, int o_won);
         void printboard();
 
