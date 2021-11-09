@@ -26,7 +26,10 @@ int main()
         tictac.selectgrid(row, column, symbol);
         tictac.printboard();
 
-        x_won,o_won=tictac.who_won();
+        std::pair<int, int> result = tictac.who_won();
+
+        x_won = result.first;
+        o_won = result.second;
         if (x_won || o_won)
         {
             break;
