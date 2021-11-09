@@ -18,7 +18,7 @@ char TicTacToe::selectgrid(int row, int column, char symbol)
     return TicTacToeBoard[row][column];
 }
 
-int TicTacToe::who_won()
+std::pair<int,int> TicTacToe::who_won()
 {
     int column_x = 0, column_o = 0;
     int row_x = 0, row_o = 0;
@@ -113,7 +113,7 @@ int TicTacToe::who_won()
         z-= 1;
     }
     stop:
-    return x_won, o_won;
+    return std::make_pair(x_won, o_won);
 }
 
 void TicTacToe::printresult(std::string name1, std::string name2, int x_won, int o_won)
