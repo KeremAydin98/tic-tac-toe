@@ -1,11 +1,11 @@
-#include "Class.cpp"
+#include "Class.h"
 
 int main()
 {
     std::string name1, name2;
     int row, column;
     int x_won, o_won;
-    char symbol;
+    char symbol,TicToeBoard;
 
     std::cout << "User1, enter your name: \n";
     std::cin >> name1;
@@ -19,18 +19,20 @@ int main()
         std::cout << name1 << ", enter your row and column: " << "\n";
         std::cin >> row >> column;
         symbol = 'x';
-        tictac.selectgrid(row, column, symbol);
+        TicToeBoard = tictac.selectgrid(row, column, symbol);
+        tictac.printboard();
         std::cout << name2 << ", enter your row and column: " << "\n";
         std::cin >> row >> column;
         symbol = 'o';
-        tictac.selectgrid(row, column, symbol);
+        TicToeBoard = tictac.selectgrid(row, column, symbol);
         tictac.printboard();
 
         std::pair<int, int> result = tictac.who_won();
 
         x_won = result.first;
         o_won = result.second;
-        if (x_won || o_won)
+
+        if ((x_won==1) || (o_won==1))
         {
             break;
         }
